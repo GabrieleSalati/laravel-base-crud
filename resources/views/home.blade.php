@@ -12,7 +12,23 @@
 </head>
 
 <body>
-    <h1>ciao</h1>
+    <div class="container">
+        <div class="row">
+            @foreach ($tracks as $track)
+                <div class="col-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $track['title'] }}</h5>
+                            <p class="card-text">{{ $track['album'] }}</p>
+                            <p class="card-text">{{ $track['author'] }}</p>
+                            <p class="card-text">{{ $track['editor'] }}</p>
+                            <p class="card-text">{{ $track['length'] }}</p>
+                            <img src={{ $track['poster'] }} alt="poster">
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 </body>
 
 </html>
