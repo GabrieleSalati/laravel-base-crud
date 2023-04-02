@@ -19,8 +19,8 @@ class TrackSeeder extends Seeder
 
         for ($i = 0; $i < 10; $i++) {
             $newTrack = new Track;
-            $newTrack->title = $faker->title();
-            $newTrack->album = $faker->title();
+            $newTrack->title = $faker->company();
+            $newTrack->album = $faker->streetName();
             $newTrack->author = $faker->name();
             $newTrack->editor = $faker->name();
             $newTrack->length = $faker->randomFloat(2, 0, 1);
