@@ -9,6 +9,7 @@
 
     @vite('resources/js/app.js')
 
+    @yield('cdn')
 </head>
 
 <body>

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('cdn')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+@endsection
+
 @section('page_name', 'Music library')
 
 @section('navbar')
@@ -28,13 +32,13 @@
                     <td>{{ $track->editor }}</td>
                     <td>{{ $track->length }}</td>
                     <td>{{ $track->poster }}</td>
-                    <td><a href="{{ route('tracks.show', [$track]) }}">Details</a></td>
+                    <td><a href="{{ route('tracks.show', [$track]) }}"><i class="bi bi-fan"></i></a></td>
                 </tr>
             @endforeach
         </tbody>
         </thead>
     </table>
-    {{ $tracks->links() }}
+    {{ $tracks->links('pagination::bootstrap-5') }}
 @endsection
 @section('footer')
     foot
