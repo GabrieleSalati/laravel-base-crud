@@ -16,7 +16,10 @@
     @include('layouts.partials.navbar')
 
     <main>
-        @yield('main-content')
+        <div class="container">
+            <h1>@yield('page_name')</h1>
+            @yield('main-content')
+        </div>
     </main>
 
     @include('layouts.partials.footer')

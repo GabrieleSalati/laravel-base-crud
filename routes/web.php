@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TrackController;
+use App\Http\Controllers\StaticController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [TrackController::class, "index"]);
+Route::get('/', [StaticController::class, "index"]);
 Route::resource('tracks', TrackController::class);
