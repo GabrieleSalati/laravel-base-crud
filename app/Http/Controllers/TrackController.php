@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Track;
 
 class TrackController extends Controller
 {
@@ -13,7 +14,8 @@ class TrackController extends Controller
      */
     public function index()
     {
-        //
+        $tracks = Track::all();
+        return view('tracks.index')
     }
 
     /**
