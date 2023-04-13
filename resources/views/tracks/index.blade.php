@@ -16,6 +16,7 @@
                 <th scope="col">Editor</th>
                 <th scope="col">Length</th>
                 <th scope="col">Poster</th>
+                <th scope="col">Actions</th>
             </tr>
         <tbody>
             @foreach ($tracks as $track)
@@ -27,6 +28,7 @@
                     <td>{{ $track->editor }}</td>
                     <td>{{ $track->length }}</td>
                     <td>{{ $track->poster }}</td>
+                    <td><a href="{{ route('tracks.show', [$track]) }}">Details</a></td>
                 </tr>
             @endforeach
         </tbody>

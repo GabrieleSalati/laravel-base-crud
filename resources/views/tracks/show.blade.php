@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
-@section('page_name', 'Music library')
+@section('page_name', $track->title)
 
-@section('navbar')
-    nav
-@endsection
 @section('main-content')
-    details
-@endsection
-@section('footer')
-    foot
+    <img src="{{ $track->poster }}" alt="poster">
+    <ul>
+        @foreach ($track->getAttributes() as $attr => $value)
+            <li>{{ $attr }} : {{ $value }}</li>
+        @endforeach
+    </ul>
 @endsection
