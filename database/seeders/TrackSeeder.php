@@ -17,7 +17,7 @@ class TrackSeeder extends Seeder
     public function run(Faker $faker)
     {
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             $newTrack = new Track;
             $newTrack->title = $faker->company();
             $newTrack->album = $faker->streetName();

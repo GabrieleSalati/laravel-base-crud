@@ -34,6 +34,7 @@
         </tbody>
         </thead>
     </table>
+    {{ $tracks->links() }}
 @endsection
 @section('footer')
     foot

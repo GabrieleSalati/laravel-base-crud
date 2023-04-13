@@ -1,13 +1,10 @@
 @extends('layouts.app')
 
-@section('page_name', 'Music library')
+@section('page_name', 'Home of Music')
 
 @section('navbar')
-    nav
 @endsection
 @section('main-content')
-    main
 @endsection
 @section('footer')
-    foot
 @endsection
