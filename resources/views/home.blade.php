@@ -24,6 +24,7 @@
                             <p class="card-text">{{ $track['editor'] }}</p>
                             <p class="card-text">{{ $track['length'] }}</p>
                             <img src={{ $track['poster'] }} alt="poster">
+                            <a href="{{ route('show', $tracks) }}"> Details </a>
                         </div>
                     </div>
                 </div>
