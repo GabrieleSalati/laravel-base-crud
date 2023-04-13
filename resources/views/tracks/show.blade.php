@@ -6,7 +6,7 @@
     nav
 @endsection
 @section('main-content')
-    main
+    details
 @endsection
 @section('footer')
     foot

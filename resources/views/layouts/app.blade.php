@@ -13,13 +13,13 @@
 
 <body>
 
-    @yield('navbar')
+    @include('layouts.partials.navbar')
 
     <main>
         @yield('main-content')
     </main>
 
-    @yield('footer')
+    @include('layouts.partials.footer')
 
 </body>
 
