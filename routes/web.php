@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [StaticController::class, "index"]);
+Route::get('/', [StaticController::class, "index"])->name('home');
 Route::resource('tracks', TrackController::class);
