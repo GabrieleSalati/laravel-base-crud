@@ -14,7 +14,12 @@ class TrackController extends Controller
      */
     public function index(Request $request)
     {
-        $tracks = Track::paginate(10);
+        if ($request->has('term')) {
+            $term = $request->get('term');
+            $tracks = Track::where('title', 'LIKE', "%$term%")->paginate(10)->withQueryString();
+        } else {
+            $tracks = Track::paginate(10);
+        }
         return view('tracks.index', compact('tracks'));
     }
 

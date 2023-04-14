@@ -10,6 +10,12 @@
     nav
 @endsection
 @section('main-content')
+
+    <form>
+        <input class="form-control" type="text" name="term" placeholder="search">
+        <button type="submit" class="btn btn-primary mb-3">search</button>
+    </form>
+
     <table class="table table-dark table-striped">
         <thead>
             <tr>
