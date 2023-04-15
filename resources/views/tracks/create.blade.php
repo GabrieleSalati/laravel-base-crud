@@ -5,6 +5,7 @@
 @section('main-content')
 
     <form action="{{ route('tracks.store') }}" method="POST">
+        @csrf
 
         <div class="input-group row">
 
