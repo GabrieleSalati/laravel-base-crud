@@ -7,13 +7,14 @@
 @section('page_name', 'Music library')
 
 @section('navbar')
-    nav
+
 @endsection
 @section('main-content')
 
     <form>
         <input class="form-control" type="text" name="term" placeholder="search">
         <button type="submit" class="btn btn-primary mb-3">search</button>
+        <a href="{{ route('tracks.create') }}" type="button" class="btn btn-primary mb-3">Add track</a>
     </form>
 
     <table class="table table-dark table-striped">
