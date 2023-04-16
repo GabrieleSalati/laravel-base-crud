@@ -42,18 +42,43 @@
                     <td class="action-cell">
                         <a href="{{ route('tracks.show', [$track]) }}"><i class="bi bi-fan"></i></a>
                         <a href="{{ route('tracks.edit', [$track]) }}"><i class="bi bi-wrench-adjustable"></i></a>
-                        <form action="{{ route('tracks.destroy', [$track]) }}" method="POST">
-                            @csrf
-                            @method('delete')
-                            <button class="bi bi-trash text-danger"></button>
-                        </form>
+                        <button class="bi bi-trash text-danger" data-bs-toggle="modal"
+                            data-bs-target="#delete-{{ $track->id }}"></button>
                     </td>
                 </tr>
             @endforeach
         </tbody>
         </thead>
     </table>
-    {{ $tracks->links('pagination::bootstrap-5') }}
+
+@section('modals')
+    @foreach ($tracks as $track)
+        <div class="modal fade" id="delete-{{ $track->id }}" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">{{ $track->title }}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Do you want to delete this track?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                        <form action="{{ route('tracks.destroy', $track) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn btn-primary">Confirm</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+@endsection
+
+{{ $tracks->links('pagination::bootstrap-5') }}
 @endsection
 @section('footer')
 

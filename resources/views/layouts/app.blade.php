@@ -25,6 +25,8 @@
 
     @include('layouts.partials.footer')
 
+    @yield('modals')
+
 </body>
 
 </html>
