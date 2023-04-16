@@ -39,7 +39,11 @@
                     <td>{{ $track->editor }}</td>
                     <td>{{ $track->length }}</td>
                     <td>{{ $track->poster }}</td>
-                    <td><a href="{{ route('tracks.show', [$track]) }}"><i class="bi bi-fan"></i></a></td>
+                    <td>
+                        <a href="{{ route('tracks.show', [$track]) }}"><i class="bi bi-fan"></i></a>
+                        <a href="{{ route('tracks.edit', [$track]) }}"><i class="bi bi-wrench-adjustable">
+                    </td>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
@@ -48,5 +52,5 @@
     {{ $tracks->links('pagination::bootstrap-5') }}
 @endsection
 @section('footer')
-    foot
+
 @endsection

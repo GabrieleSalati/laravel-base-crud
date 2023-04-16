@@ -72,9 +72,9 @@ class TrackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Track $track)
     {
-        //
+        return view('tracks.edit', compact('track'));
     }
 
     /**
@@ -84,9 +84,11 @@ class TrackController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Track $track)
     {
-        //
+        $data = $request->all();
+        $track->update($data);
+        return redirect()->route('tracks.show', $track);
     }
 
     /**
