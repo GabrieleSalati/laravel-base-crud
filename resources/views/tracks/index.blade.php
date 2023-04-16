@@ -39,10 +39,14 @@
                     <td>{{ $track->editor }}</td>
                     <td>{{ $track->length }}</td>
                     <td>{{ $track->poster }}</td>
-                    <td>
+                    <td class="action-cell">
                         <a href="{{ route('tracks.show', [$track]) }}"><i class="bi bi-fan"></i></a>
-                        <a href="{{ route('tracks.edit', [$track]) }}"><i class="bi bi-wrench-adjustable">
-                    </td>
+                        <a href="{{ route('tracks.edit', [$track]) }}"><i class="bi bi-wrench-adjustable"></i></a>
+                        <form action="{{ route('tracks.destroy', [$track]) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="bi bi-trash text-danger"></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
